@@ -1,5 +1,6 @@
-SRCS	= ./main.c ./utils/print_success.c ./utils/explain_errors.c ./testft_strlen.c ./testft_memset.c \
-		  ./testft_bzero.c ./testft_memcpy.c ./testft_memccpy.c
+SRCS	= ./main.c ./utils/print_success.c ./utils/explain_errors.c \
+		  ./testft_strlen.c ./testft_memset.c ./testft_bzero.c \
+		  ./testft_memcpy.c ./testft_memccpy.c ./testft_memmove.c
 
 OBJS	= ${SRCS:.c=.o}
 
