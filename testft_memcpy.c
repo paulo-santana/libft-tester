@@ -1,18 +1,7 @@
 #include "libft.h"
 #include "libtest.h"
 
-void	explain_expected_memcpy(char dest[40], char ft_dest[40])
-{
-	printf("        Expected: [");
-	for (int i = 0; i < 40; i++)
-		printf("%c", dest[i]);
-	printf("]\n        Got:    : [");
-	for (int i = 0; i < 40; i++)
-		printf("%c", ft_dest[i]);
-	printf("]\n");
-}
-
-int	compare_original_memcpy()
+static int	compare_original_memcpy()
 {
 	int	success = 1;
 	char dest[40];
@@ -39,11 +28,11 @@ int	compare_original_memcpy()
 	printf("    Test Original: ");
 	print_success(success);
 	if (!success)
-		explain_expected_memcpy(dest, ft_dest);
+		explain_expected_diff(dest, ft_dest);
 	return (success);
 }
 
-int test_return_pointer()
+static int test_return_pointer()
 {
 	int success = 1;
 	char dest[40];

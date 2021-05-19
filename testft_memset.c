@@ -2,20 +2,6 @@
 #include "libft.h"
 #include "libtest.h"
 
-void	explain_expected_memset(char expected[40], char result[40])
-{
-	printf("        Expected: ");
-	for (int i = 0; i < 40; i++)
-		printf("%c", expected[i]);
-	printf("\n        Got:      ");
-	for (int i = 0; i < 40; i++)
-		if (expected[i] != result[i])
-			printf(BOLD RED "%c", result[i]);
-		else
-			printf(RESET "%c", result[i]);
-	printf(RESET "\n");
-}
-
 int compare_original_memset(void)
 {
 	char	memory[40];
@@ -37,7 +23,7 @@ int compare_original_memset(void)
 	printf("    Test Original: ");
 	print_success(success);
 	if (!success)
-		explain_expected_memset(memory, ft_memory);
+		explain_expected_diff(memory, ft_memory);
 	return (success);
 }
 

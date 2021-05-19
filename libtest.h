@@ -14,5 +14,6 @@
 # define RESET		"\x1b[0m"
 
 void	print_success(int success);
+void	explain_expected_diff(char expected[40], char result[40]);
 
 #endif
