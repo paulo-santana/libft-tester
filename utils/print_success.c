@@ -1,9 +1,11 @@
 #include "../libtest.h"
 
-void	print_success(int success)
+void	print_success(char *msg, int success)
 {
+	printf("   ");
 	if (success)
-		printf(BOLD GREEN "Ok" RESET "\n");
+		printf(BOLD GREEN " Ok" RESET);
 	else
-		printf(BOLD RED "KO :(" RESET "\n");
+		printf(BOLD RED   "KO :(" );
+	printf("  %s\n" RESET, msg);
 }

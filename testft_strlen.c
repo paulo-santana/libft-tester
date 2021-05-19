@@ -23,8 +23,7 @@ int	compare_original_strlen(void)
 	if (ft_len != original_len)
 		success = 0;
 
-	printf("    Test Original: ");
-	print_success(success);
+	print_success("Test Original", success);
 	if (!success)
 		explain_expected(original_len, ft_len);
 	return (success);
@@ -35,11 +34,10 @@ static int	test_empty()
 	char *empty = "";
 	int success = 1;
 
-	printf("    Test \"\": ");
 	int result = ft_strlen(empty);
 	if (result)
 		success = 0;
-	print_success(success);
+	print_success("Test \"\"", success);
 	if (!success)
 		explain_expected(0, result);
 	return (success);

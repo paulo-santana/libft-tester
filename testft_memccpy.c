@@ -27,8 +27,7 @@ static int compare_original_memccpy ()
 		if (dest[i] != ft_dest[i])
 			success = 0;
 
-	printf("    Test Original (c before n): ");
-	print_success(success);
+	print_success("Test original (c before n)", success);
 	if (!success)
 		explain_expected_diff(dest, ft_dest);
 	return (success);
@@ -60,8 +59,7 @@ static int compare_original_memccpy_n()
 		if (dest[i] != ft_dest[i])
 			success = 0;
 
-	printf("    Test Original (n before c): ");
-	print_success(success);
+	print_success("Test original (n before c)", success);
 	if (!success)
 		explain_expected_diff(dest, ft_dest);
 	return (success);
@@ -80,8 +78,7 @@ static int test_return_pointer()
 	result = ft_memccpy(ft_dest + 8, ft_dest + 4, '-', 7);
 	if (result != ft_dest + 8)
 		success = 0;
-	printf("    Test return value: ");
-	print_success(success);
+	print_success("Test return value", success);
 	return (success);
 }
 

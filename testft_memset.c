@@ -20,8 +20,7 @@ int compare_original_memset(void)
 		if (ft_memory[i] != memory[i])
 			success = 0;
 
-	printf("    Test Original: ");
-	print_success(success);
+	print_success("Test original", success);
 	if (!success)
 		explain_expected_diff(memory, ft_memory);
 	return (success);
@@ -40,8 +39,8 @@ int	test_with_zero(void)
 		if (ft_memory[i] != '5')
 			success = 0;
 
-	printf("    Test " BOLD BLUE "ft_memset(buffer, '-', 0)" RESET ": ");
-	print_success(success);
+	char *msg = "Test " BOLD BLUE "ft_memset(buffer, '-', 0)" RESET;
+	print_success(msg, success);
 	return (success);
 }
 
@@ -54,8 +53,7 @@ int	test_return()
 	result = ft_memset(ft_memory, '-', 20);
 	if (result != ft_memory)
 		success = 0;
-	printf("    Test return value: ");
-	print_success(success);
+	print_success("Test return value", success);
 	return (success);
 }
 

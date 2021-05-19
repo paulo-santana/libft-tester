@@ -7,6 +7,7 @@ int	testft_memset(void);
 int	testft_bzero(void);
 int	testft_memcpy(void);
 int	testft_memccpy(void);
+int testft_memmove(void);
 
 int	main(void)
 {
@@ -24,6 +25,9 @@ int	main(void)
 		return (1);
 	printf(BOLD YELLOW "Testing ft_memccpy():" RESET "\n");
 	if (!testft_memccpy())
+		return (1);
+	printf(BOLD YELLOW "Testing ft_memmove():" RESET "\n");
+	if (!testft_memmove())
 		return (1);
 	return (0);
 }

@@ -20,8 +20,7 @@ int compare_original_bzero()
 		if (ft_memory[i] != memory[i])
 			success = (0);
 
-	printf("    Test Original: ");
-	print_success(success);
+	print_success("Compare original", success);
 	return (success);
 }
 

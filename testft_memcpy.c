@@ -25,8 +25,7 @@ static int	compare_original_memcpy()
 		if (dest[i] != ft_dest[i])
 			success = 0;
 
-	printf("    Test Original: ");
-	print_success(success);
+	print_success("Compare original", success);
 	if (!success)
 		explain_expected_diff(dest, ft_dest);
 	return (success);
@@ -44,8 +43,7 @@ static int test_return_pointer()
 	char *result = ft_memcpy(&dest[9], &dest[0], size);
 	if (result != &dest[9])
 		success = 0;
-	printf("    Test return value: ");
-	print_success(success);
+	print_success("Test return value", success);
 	return (success);
 }
 
