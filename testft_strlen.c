@@ -1,25 +1,32 @@
 #include "libft.h"
 #include <stdio.h>
-#include <string.h>
 #include "libtest.h"
+
+void	explain_expected(int expected, int result)
+{
+	printf("        Expected: %d\n", expected);
+	printf("        Got:      " BOLD RED "%d" RESET "\n", result);
+}
 
 int	compare_original_strlen(void)
 {
 	char	*str;
-	int		len;
+	int		ft_len;
 	int		original_len;
 	int		success = 1;
 
 	str = "string marota";
-	len = ft_strlen(str);
+	ft_len = ft_strlen(str);
 
 	original_len = strlen(str);
 
-	if (len != original_len)
+	if (ft_len != original_len)
 		success = 0;
 
 	printf("    Test Original: ");
 	print_success(success);
+	if (!success)
+		explain_expected(original_len, ft_len);
 	return (success);
 }
 
@@ -33,6 +40,8 @@ static int	test_empty()
 	if (result)
 		success = 0;
 	print_success(success);
+	if (!success)
+		explain_expected(0, result);
 	return (success);
 }
 
