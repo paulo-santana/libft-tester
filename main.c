@@ -5,6 +5,7 @@
 int	testft_strlen(void);
 int	testft_memset(void);
 int	testft_bzero(void);
+int	testft_memcpy(void);
 
 int	main(void)
 {
@@ -16,6 +17,9 @@ int	main(void)
 		return (1);
 	printf(BOLD YELLOW "Testing ft_bzero():" RESET "\n");
 	if (!testft_bzero())
+		return (1);
+	printf(BOLD YELLOW "Testing ft_memcpy():" RESET "\n");
+	if (!testft_memcpy())
 		return (1);
 	return (0);
 }

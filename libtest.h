@@ -1,6 +1,8 @@
 #ifndef LIBTEST_H
 # define LIBTEST_H
 # include <stdio.h>
+# include <string.h>
+# include <strings.h>
 
 # define BOLD		"\x1b[1m"
 # define RED		"\x1b[31m"

@@ -10,12 +10,15 @@ int	compare_original_strlen(void)
 	int		original_len;
 	int		success = 1;
 
-	printf("    Test Original: ");
 	str = "string marota";
 	len = ft_strlen(str);
+
 	original_len = strlen(str);
+
 	if (len != original_len)
 		success = 0;
+
+	printf("    Test Original: ");
 	print_success(success);
 	return (success);
 }

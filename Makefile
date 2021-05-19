@@ -1,9 +1,7 @@
 SRCS	= ./main.c ./print_success.c ./testft_strlen.c ./testft_memset.c \
-		  ./testft_bzero.c
+		  ./testft_bzero.c ./testft_memcpy.c
 
 OBJS	= ${SRCS:.c=.o}
-
-LIBS	= ./libft/libft.a
 
 NAME	= main
 
@@ -12,16 +10,16 @@ CFLAGS	= -Wall -Werror -Wextra -g
 RM		= rm -f
 CC		= gcc ${CFLAGS}
 
-all: ${NAME}
+all: libs ${NAME}
 
-${NAME}: ${OBJS} ${LIBS}
+${NAME}: ${OBJS} libft/libft.a
 	${CC} -o ${NAME} ${OBJS} -L./libft -lft
 
 ${OBJS}: ${SRCS}
 	${CC} -c ${SRCS}
 
-${LIBS}: 
-	make re -C ./libft
+libs:
+	${MAKE} -C libft/
 
 clean:
 	${RM} ${OBJS}
