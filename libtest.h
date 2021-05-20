@@ -2,6 +2,7 @@
 # define LIBTEST_H
 # include <stdio.h>
 # include <string.h>
+# include <bsd/string.h>
 # include <strings.h>
 
 # define BOLD		"\x1b[1m"

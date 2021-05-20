@@ -59,11 +59,11 @@ static int test_return_pointer()
 	ft_dest[9] = '-';
 
 	// the parameters don't matter, they just need to be valid
-	result    =    memccpy(ft_dest + 8, ft_dest + 4, '-', 7);
+	result    =    memccpy(ft_dest + 20, ft_dest + 4, '-', 7);
 	for (int i = 0; i < 40; i++)
 		ft_dest[i] = 'A' + i;
 	ft_dest[9] = '-';
-	ft_result = ft_memccpy(ft_dest + 8, ft_dest + 4, '-', 7);
+	ft_result = ft_memccpy(ft_dest + 20, ft_dest + 4, '-', 7);
 	if (result != ft_result)
 		success = 0;
 
@@ -88,8 +88,8 @@ static int test_return_pointer_n()
 	ft_dest[9] = '-';
 
 	// the parameters don't matter, they just need to be valid
-	result    =    memccpy(ft_dest + 8, ft_dest + 4, '-', 3);
-	ft_result = ft_memccpy(ft_dest + 8, ft_dest + 4, '-', 3);
+	result    =    memccpy(ft_dest + 20, ft_dest + 4, '-', 3);
+	ft_result = ft_memccpy(ft_dest + 20, ft_dest + 4, '-', 3);
 	if (result != ft_result)
 		success = 0;
 

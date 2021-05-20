@@ -4,11 +4,11 @@ void	explain_expected_diff(char expected[40], char result[40])
 {
 	int is_red_already = 0;
 
-	printf("        Expected: ");
+	printf("        Expected: [");
 	for (int i = 0; i < 40; i++)
 		printf("%c", expected[i]);
 
-	printf("\n        Got:      ");
+	printf("]\n        Got:      [");
 	for (int i = 0; i < 40; i++)
 	{
 		if (expected[i] != result[i] && !is_red_already)
@@ -23,7 +23,7 @@ void	explain_expected_diff(char expected[40], char result[40])
 		}
 		printf("%c", result[i]);
 	}
-	printf(RESET "\n");
+	printf(RESET "]\n");
 }
 
 void	explain_expected_pointer(void *expected, void *result)
