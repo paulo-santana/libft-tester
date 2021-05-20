@@ -12,6 +12,7 @@ int testft_memchr(void);
 int testft_memcmp(void);
 int testft_strlcpy(void);
 int testft_strlcat(void);
+int testft_strchr(void);
 
 int	main(void)
 {
@@ -45,6 +46,9 @@ int	main(void)
 		success = 1;
 	printf(BOLD YELLOW "Testing ft_strlcat():" RESET "\n");
 	if (!testft_strlcat())
+		success = 1;
+	printf(BOLD YELLOW "Testing ft_strchr():" RESET "\n");
+	if (!testft_strchr())
 		success = 1;
 	return (success);
 }
