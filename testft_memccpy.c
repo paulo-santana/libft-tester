@@ -29,8 +29,8 @@ static int compare_original_memccpy_n()
 	int success = 1;
 	char dest[40]    = "----------------------------------------";
 	char ft_dest[40] = "----------------------------------------";
-	char src[40]     = "AAAAAAAAAAAAAAAAAAAAAAAAA_AAAAAAAAAAAAAA";
-	char ft_src[40]  = "AAAAAAAAAAAAAAAAAAAAAAAAA_AAAAAAAAAAAAAA";
+	char src[40]     = "AAAAAAAAAAAAAAAAAAAAAAAAA_AAAAAAAAAAAAAB";
+	char ft_src[40]  = "AAAAAAAAAAAAAAAAAAAAAAAAA_AAAAAAAAAAAAAC";
 	int	c = '_';
 	int size = 5;
 
