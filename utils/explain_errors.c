@@ -31,5 +31,13 @@ void	explain_expected_pointer(void *expected, void *result)
 	printf("        Expected: ");
 	printf("%p\n", expected);
 	printf("        got:      ");
-	printf(BOLD RED "%p\n", result);
+	printf(BOLD RED "%p" RESET "\n", result);
+}
+
+void	explain_expected_int(int expected, int result)
+{
+	printf("        Expected: ");
+	printf("%i\n", expected);
+	printf("        got:      ");
+	printf(BOLD RED "%i" RESET "\n", result);
 }
