@@ -25,3 +25,11 @@ void	explain_expected_diff(char expected[40], char result[40])
 	}
 	printf(RESET "\n");
 }
+
+void	explain_expected_pointer(void *expected, void *result)
+{
+	printf("        Expected: ");
+	printf("%p\n", expected);
+	printf("        got:      ");
+	printf(BOLD RED "%p\n", result);
+}

@@ -8,26 +8,31 @@ int	testft_bzero(void);
 int	testft_memcpy(void);
 int	testft_memccpy(void);
 int testft_memmove(void);
+int testft_memchr(void);
 
 int	main(void)
 {
+	int	success = 1;
 	printf(BOLD YELLOW "Testing ft_strlen():" RESET "\n");
 	if (!testft_strlen())
-		return (1);
+		success = 0;
 	printf(BOLD YELLOW "Testing ft_memset():" RESET "\n");
 	if (!testft_memset())
-		return (1);
+		success = 0;
 	printf(BOLD YELLOW "Testing ft_bzero():" RESET "\n");
 	if (!testft_bzero())
-		return (1);
+		success = 0;
 	printf(BOLD YELLOW "Testing ft_memcpy():" RESET "\n");
 	if (!testft_memcpy())
-		return (1);
+		success = 0;
 	printf(BOLD YELLOW "Testing ft_memccpy():" RESET "\n");
 	if (!testft_memccpy())
-		return (1);
+		success = 0;
 	printf(BOLD YELLOW "Testing ft_memmove():" RESET "\n");
 	if (!testft_memmove())
-		return (1);
-	return (0);
+		success = 0;
+	printf(BOLD YELLOW "Testing ft_memchr():" RESET "\n");
+	if (!testft_memchr())
+		success = 0;
+	return (success);
 }

@@ -15,5 +15,6 @@
 
 void	print_success(char *msg, int success);
 void	explain_expected_diff(char expected[40], char result[40]);
+void	explain_expected_pointer(void *expected, void *result);
 
 #endif
