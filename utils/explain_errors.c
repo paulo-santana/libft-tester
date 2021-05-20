@@ -16,7 +16,7 @@ void	explain_expected_diff(char expected[40], char result[40])
 			is_red_already = 1;
 			printf(BOLD RED);
 		}
-		else if (expected[i] == result[i])
+		else if (expected[i] == result[i] && is_red_already)
 		{
 			printf(RESET);
 			is_red_already = 0;
