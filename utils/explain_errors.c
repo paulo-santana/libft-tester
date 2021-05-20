@@ -6,7 +6,12 @@ void	explain_expected_diff(char expected[40], char result[40])
 
 	printf("        Expected: [");
 	for (int i = 0; i < 40; i++)
-		printf("%c", expected[i]);
+	{
+		if (expected[i] == 0)
+			printf("%s", "[\\0]");
+		else
+			printf("%c", expected[i]);
+	}
 
 	printf("]\n        Got:      [");
 	for (int i = 0; i < 40; i++)
@@ -21,7 +26,10 @@ void	explain_expected_diff(char expected[40], char result[40])
 			printf(RESET);
 			is_red_already = 0;
 		}
-		printf("%c", result[i]);
+		if (result[i] == 0)
+			printf("%s", "\\0");
+		else
+			printf("%c", result[i]);
 	}
 	printf(RESET "]\n");
 }
