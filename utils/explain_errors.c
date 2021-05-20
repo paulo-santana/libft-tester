@@ -8,7 +8,7 @@ void	explain_expected_diff(char expected[40], char result[40])
 	for (int i = 0; i < 40; i++)
 	{
 		if (expected[i] == 0)
-			printf("%s", "[\\0]");
+			printf("%s", "\\0");
 		else
 			printf("%c", expected[i]);
 	}
