@@ -24,8 +24,8 @@ all: libs ${NAME}
 ${NAME}: ${OBJS} libft/libft.a
 	${CC} -o ${NAME} ${OBJS} -L./libft -lft
 
-.c.o:
-	${CC} -c $< -o ${<:.c=.o}
+%.o: %.c
+	${CC} -c $< -o $@
 
 libs:
 	${MAKE} test -C libft/
