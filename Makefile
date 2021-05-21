@@ -28,7 +28,13 @@ ${NAME}: ${OBJS} libft/libft.a
 	${CC} -c $< -o $@
 
 libs:
-	${MAKE} test -C libft/
+	${MAKE} -C libft/
+
+_sanitize:
+	${MAKE} fclean -C libft/
+	${MAKE} CFLAGS="${CFLAGS}" -C libft/
+
+test: _sanitize ${NAME}
 
 clean:
 	${RM} ${OBJS}
