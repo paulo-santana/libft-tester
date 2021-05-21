@@ -28,7 +28,7 @@ ${NAME}: ${OBJS} libft/libft.a
 	${CC} -c $< -o ${<:.c=.o}
 
 libs:
-	${MAKE} -C libft/
+	${MAKE} test -C libft/
 
 clean:
 	${RM} ${OBJS}
