@@ -14,6 +14,8 @@ int testft_strlcpy(void);
 int testft_strlcat(void);
 int testft_strchr(void);
 int testft_strrchr(void);
+int testft_strnstr(void);
+int testft_strncmp(void);
 
 int	main(void)
 {
@@ -53,6 +55,12 @@ int	main(void)
 		success = 1;
 	printf(BOLD YELLOW "Testing ft_strrchr():" RESET "\n");
 	if (!testft_strrchr())
+		success = 1;
+	printf(BOLD YELLOW "Testing ft_strnstr():" RESET "\n");
+	if (!testft_strnstr())
+		success = 1;
+	printf(BOLD YELLOW "Testing ft_strncmp():" RESET "\n");
+	if (!testft_strncmp())
 		success = 1;
 	return (success);
 }
