@@ -9,7 +9,12 @@ OBJS	= ${SRCS:.c=.o}
 
 NAME	= main
 
-CFLAGS	= -Wall -Werror -Wextra -lbsd -g
+CFLAGS	= -Wall -Werror -Wextra -fsanitize=address -g
+
+UNAME	= $(shell uname)
+ifeq (${UNAME}, Linux)
+CFLAGS := ${CFLAGS} -lbsd
+endif
 
 RM		= rm -f
 CC		= gcc ${CFLAGS}
