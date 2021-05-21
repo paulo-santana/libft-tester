@@ -1,13 +1,14 @@
+#ifndef LIBTEST_H
+# define LIBTEST_H
+
+# include <stdio.h>
 #ifdef __linux__
 # include <bsd/string.h>
 # endif
-#ifdef __apple__
+#ifdef __APPLE__
 # include <string.h>
 #endif
 
-#ifndef LIBTEST_H
-# define LIBTEST_H
-# include <stdio.h>
 # define BOLD		"\x1b[1m"
 # define RED		"\x1b[31m"
 # define GREEN 		"\x1b[32m"
