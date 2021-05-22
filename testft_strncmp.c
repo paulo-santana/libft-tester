@@ -8,8 +8,8 @@ static int test_both_equal()
 	char strB[] = "kk eae men";
 	int size = 10;
 
-	int result = strncmp(strA, strB, size);
-	int ft_result = ft_strncmp(strA, strB, size);
+	int result = strncmp(strA, strB, size) > 0;
+	int ft_result = ft_strncmp(strA, strB, size) > 0;
 
 	if (result != ft_result)
 		success = 0;
@@ -26,8 +26,8 @@ static int test_a_less_than_b()
 	char strB[] = "kk eae men";
 	int size = 10;
 
-	int result = strncmp(strA, strB, size);
-	int ft_result = ft_strncmp(strA, strB, size);
+	int result = strncmp(strA, strB, size) > 0;
+	int ft_result = ft_strncmp(strA, strB, size) > 0;
 
 	if (result != ft_result)
 		success = 0;
@@ -44,8 +44,8 @@ static int test_a_greater_than_b()
 	char strB[] = "kk eaa men";
 	int size = 10;
 
-	int result = strncmp(strA, strB, size);
-	int ft_result = ft_strncmp(strA, strB, size);
+	int result = strncmp(strA, strB, size) > 0;
+	int ft_result = ft_strncmp(strA, strB, size) > 0;
 
 	if (result != ft_result)
 		success = 0;
@@ -62,8 +62,8 @@ static int test_difference_after_nul()
 	char strB[] = "kk e\0ae men";
 	int size = 10;
 
-	int result = strncmp(strA, strB, size);
-	int ft_result = ft_strncmp(strA, strB, size);
+	int result = strncmp(strA, strB, size) > 0;
+	int ft_result = ft_strncmp(strA, strB, size) > 0;
 
 	if (result != ft_result)
 		success = 0;
@@ -80,8 +80,8 @@ static int test_unsigned_char()
 	char strB[] = "kk e\0ae men";
 	int size = 10;
 
-	int result = strncmp(strA, strB, size);
-	int ft_result = ft_strncmp(strA, strB, size);
+	int result = strncmp(strA, strB, size) > 0;
+	int ft_result = ft_strncmp(strA, strB, size) > 0;
 
 	if (result != ft_result)
 		success = 0;
@@ -100,8 +100,8 @@ static int test_diff_with_a_big_string()
 				   If that doesn't blow your mind, I don't know what will.";
 	int size = 10;
 
-	int result = strncmp(strA, strB, size);
-	int ft_result = ft_strncmp(strA, strB, size);
+	int result = strncmp(strA, strB, size) > 0;
+	int ft_result = ft_strncmp(strA, strB, size) > 0;
 
 	if (result != ft_result)
 		success = 0;
