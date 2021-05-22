@@ -8,12 +8,15 @@ static int	test_all(void)
 	int failed = 0;
 	int result;
 	int ft_result;
-	char test_str[20] = "Test ";
+	char test_str[30] = "Test ";
 
 	char *test_subjects[] = {"0", "-0", "1", "-1", "--42", "-42", "42", "1234",
 							"abcd", "00123", "  - 2", "     20", "    -3",
 							"123d", "\t9", "\n10", "\v11", "\f12", "\r13",
 							"abc32", "32 abd", "-0000000003", "  b  -32",
+							"    +32", "+33", "-+ 34", "-2147483647", "++21",
+							"+-48", "-211+3",
+							"-2147483648",  "2147483648",  "3000000000000000",
 							NULL};
 	while (test_subjects[i])
 	{
