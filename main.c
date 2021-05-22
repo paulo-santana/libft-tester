@@ -24,6 +24,8 @@ int testft_isascii(void);
 int testft_isprint(void);
 int testft_toupper(void);
 int testft_tolower(void);
+int testft_calloc(void);
+int testft_strdup(void);
 
 int	main(void)
 {
@@ -93,6 +95,12 @@ int	main(void)
 		failed = 1;
 	printf(BOLD YELLOW "Testing ft_tolower():" RESET "\n");
 	if (!testft_tolower())
+		failed = 1;
+	printf(BOLD YELLOW "Testing ft_calloc():" RESET "\n");
+	if (!testft_calloc())
+		failed = 1;
+	printf(BOLD YELLOW "Testing ft_strdup():" RESET "\n");
+	if (!testft_strdup())
 		failed = 1;
 	return (failed);
 }
