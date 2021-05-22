@@ -12,20 +12,20 @@ OBJS	= ${SRCS:.c=.o}
 
 NAME	= main
 
-CFLAGS	= -Wall -Werror -Wextra -fsanitize=address -g
+CFLAGS	= -Wall -Werror -Wextra
 
 UNAME	= $(shell uname)
 ifeq (${UNAME}, Linux)
-CFLAGS := ${CFLAGS} -lbsd
+${NAME}: CFLAGS := ${CFLAGS}
 endif
 
 RM		= rm -f
-CC		= gcc ${CFLAGS}
+CC		= clang ${CFLAGS}
 
 all: libs ${NAME}
 
 ${NAME}: ${OBJS} libft/libft.a
-	${CC} -o ${NAME} ${OBJS} -L./libft -lft
+	${CC} ${OBJS} -o ${NAME} -lbsd -L./libft -lft
 
 %.o: %.c
 	${CC} -c $< -o $@
@@ -33,10 +33,12 @@ ${NAME}: ${OBJS} libft/libft.a
 libs:
 	${MAKE} -C libft/
 
+_sanitize: CFLAGS := ${CFLAGS} -fsanitize=address -g
 _sanitize:
 	${MAKE} fclean -C libft/
 	${MAKE} CFLAGS="${CFLAGS}" -C libft/
 
+test: CC		:= ${CC} -fsanitize=address -g
 test: _sanitize ${NAME}
 
 clean:
