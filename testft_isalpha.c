@@ -5,7 +5,7 @@ static int test_everything()
 {
 	int success = 1;
 
-	for (int i = 0; i <= 127; i++)
+	for (int i = -450; i <= 450; i++)
 	{
 		int result = isalpha(i) != 0;
 		int ft_result = ft_isalpha(i) != 0;
