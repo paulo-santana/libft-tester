@@ -3,7 +3,10 @@ SRCS	= ./main.c ./utils/print_success.c ./utils/explain_errors.c \
 		  ./testft_memcpy.c ./testft_memccpy.c ./testft_memmove.c \
 		  ./testft_memchr.c ./testft_memcmp.c  ./testft_strlcpy.c \
 		  ./testft_strlcat.c ./testft_strchr.c ./testft_strrchr.c \
-		  ./testft_strnstr.c ./testft_strncmp.c
+		  ./testft_strnstr.c ./testft_strncmp.c ./testft_atoi.c \
+		  ./testft_isspace.c ./testft_isalpha.c ./testft_isdigit.c \
+		  ./testft_isalnum.c ./testft_isascii.c ./testft_isprint.c \
+		  ./testft_toupper.c ./testft_tolower.c
 
 OBJS	= ${SRCS:.c=.o}
 

@@ -20,7 +20,7 @@ static int compare_original_memccpy ()
 
 	print_success("Test original (c before n)", success);
 	if (!success)
-		explain_expected_diff(dest, ft_dest);
+		explain_expected_diff(dest, ft_dest, 40);
 	return (success);
 }
 
@@ -43,7 +43,7 @@ static int compare_original_memccpy_n()
 
 	print_success("Test original (n before c)", success);
 	if (!success)
-		explain_expected_diff(dest, ft_dest);
+		explain_expected_diff(dest, ft_dest, 40);
 	return (success);
 }
 

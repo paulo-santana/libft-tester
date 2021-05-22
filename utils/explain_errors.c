@@ -1,20 +1,22 @@
 #include "../libtest.h"
 
-void	explain_expected_diff(char expected[40], char result[40])
+void	explain_expected_diff(char expected[], char result[], unsigned int size)
 {
 	int is_red_already = 0;
 
 	printf("        Expected: [");
-	for (int i = 0; i < 40; i++)
+	for (unsigned int i = 0; i < size; i++)
 	{
-		if (expected[i] == 0)
-			printf("%s", "\\0");
+		int p = isprint(expected[i]);
+
+		if (!p)
+			printf("*");
 		else
 			printf("%c", expected[i]);
 	}
 
 	printf("]\n        Got:      [");
-	for (int i = 0; i < 40; i++)
+	for (unsigned int i = 0; i < size; i++)
 	{
 		if (expected[i] != result[i] && !is_red_already)
 		{
@@ -26,8 +28,9 @@ void	explain_expected_diff(char expected[40], char result[40])
 			printf(RESET);
 			is_red_already = 0;
 		}
-		if (result[i] == 0)
-			printf("%s", "\\0");
+		int p = isprint(result[i]);
+		if (!p)
+			printf("*");
 		else
 			printf("%c", result[i]);
 	}

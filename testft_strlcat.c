@@ -25,7 +25,7 @@ static int test_with_size_zero()
 		success = 0;
 	print_success("Test with size 0", success);
 	if (!success)
-		explain_expected_diff(dest, ft_dest);
+		explain_expected_diff(dest, ft_dest, 40);
 	return (success);
 }
 
@@ -53,7 +53,7 @@ static int test_with_size_four()
 		success = 0;
 	print_success("Test with size 4", success);
 	if (!success)
-		explain_expected_diff(dest, ft_dest);
+		explain_expected_diff(dest, ft_dest, 40);
 	return (success);
 }
 
@@ -81,7 +81,7 @@ static int test_with_string_smaller_than_size()
 		success = 0;
 	print_success("Test with string smaller than size", success);
 	if (!success)
-		explain_expected_diff(dest, ft_dest);
+		explain_expected_diff(dest, ft_dest, 40);
 	return (success);
 }
 

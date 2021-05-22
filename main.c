@@ -16,51 +16,83 @@ int testft_strchr(void);
 int testft_strrchr(void);
 int testft_strnstr(void);
 int testft_strncmp(void);
+int testft_atoi(void);
+int testft_isspace(void);
+int testft_isalpha(void);
+int testft_isdigit(void);
+int testft_isascii(void);
+int testft_isprint(void);
+int testft_toupper(void);
+int testft_tolower(void);
 
 int	main(void)
 {
-	int	success = 0;
+	int	failed = 0;
 	printf(BOLD YELLOW "Testing ft_strlen():" RESET "\n");
 	if (!testft_strlen())
-		success = 1;
+		failed = 1;
 	printf(BOLD YELLOW "Testing ft_memset():" RESET "\n");
 	if (!testft_memset())
-		success = 1;
+		failed = 1;
 	printf(BOLD YELLOW "Testing ft_bzero():" RESET "\n");
 	if (!testft_bzero())
-		success = 1;
+		failed = 1;
 	printf(BOLD YELLOW "Testing ft_memcpy():" RESET "\n");
 	if (!testft_memcpy())
-		success = 1;
+		failed = 1;
 	printf(BOLD YELLOW "Testing ft_memccpy():" RESET "\n");
 	if (!testft_memccpy())
-		success = 1;
+		failed = 1;
 	printf(BOLD YELLOW "Testing ft_memmove():" RESET "\n");
 	if (!testft_memmove())
-		success = 1;
+		failed = 1;
 	printf(BOLD YELLOW "Testing ft_memchr():" RESET "\n");
 	if (!testft_memchr())
-		success = 1;
+		failed = 1;
 	printf(BOLD YELLOW "Testing ft_memcmp():" RESET "\n");
 	if (!testft_memcmp())
-		success = 1;
+		failed = 1;
 	printf(BOLD YELLOW "Testing ft_strlcpy():" RESET "\n");
 	if (!testft_strlcpy())
-		success = 1;
+		failed = 1;
 	printf(BOLD YELLOW "Testing ft_strlcat():" RESET "\n");
 	if (!testft_strlcat())
-		success = 1;
+		failed = 1;
 	printf(BOLD YELLOW "Testing ft_strchr():" RESET "\n");
 	if (!testft_strchr())
-		success = 1;
+		failed = 1;
 	printf(BOLD YELLOW "Testing ft_strrchr():" RESET "\n");
 	if (!testft_strrchr())
-		success = 1;
+		failed = 1;
 	printf(BOLD YELLOW "Testing ft_strnstr():" RESET "\n");
 	if (!testft_strnstr())
-		success = 1;
+		failed = 1;
 	printf(BOLD YELLOW "Testing ft_strncmp():" RESET "\n");
 	if (!testft_strncmp())
-		success = 1;
-	return (success);
+		failed = 1;
+	printf(BOLD YELLOW "Testing ft_atoi():" RESET "\n");
+	if (!testft_atoi())
+		failed = 1;
+	printf(BOLD YELLOW "Testing ft_isspace():" RESET "\n");
+	if (!testft_isspace())
+		failed = 1;
+	printf(BOLD YELLOW "Testing ft_isalpha():" RESET "\n");
+	if (!testft_isalpha())
+		failed = 1;
+	printf(BOLD YELLOW "Testing ft_isdigit():" RESET "\n");
+	if (!testft_isdigit())
+		failed = 1;
+	printf(BOLD YELLOW "Testing ft_isascii():" RESET "\n");
+	if (!testft_isascii())
+		failed = 1;
+	printf(BOLD YELLOW "Testing ft_isprint():" RESET "\n");
+	if (!testft_isprint())
+		failed = 1;
+	printf(BOLD YELLOW "Testing ft_toupper():" RESET "\n");
+	if (!testft_toupper())
+		failed = 1;
+	printf(BOLD YELLOW "Testing ft_tolower():" RESET "\n");
+	if (!testft_tolower())
+		failed = 1;
+	return (failed);
 }

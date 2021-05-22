@@ -25,7 +25,7 @@ static int compare_original_memmove(void)
 			success = 0;
 
 	if (!success)
-		explain_expected_diff(dest, ft_dest);
+		explain_expected_diff(dest, ft_dest, 40);
 	print_success("Test Original", success);
 	return (success);
 }
@@ -55,7 +55,7 @@ static int test_dest_overlap_src()
 
 	print_success("Test dest overlaping src", success);
 	if (!success)
-		explain_expected_diff(dest, ft_dest);
+		explain_expected_diff(dest, ft_dest, 40);
 	return (success);
 }
 
@@ -84,7 +84,7 @@ static int test_src_overlap_dest()
 
 	print_success("Test src overlaping dest", success);
 	if (!success)
-		explain_expected_diff(dest, ft_dest);
+		explain_expected_diff(dest, ft_dest, 40);
 	return (success);
 }
 

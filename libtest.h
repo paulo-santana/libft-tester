@@ -1,12 +1,16 @@
 #ifndef LIBTEST_H
 # define LIBTEST_H
 
-# include <stdio.h>
+# include <ctype.h>
 #ifdef __linux__
 # include <bsd/string.h>
+# include <bsd/stdlib.h>
+# include <bsd/stdio.h>
 # endif
 #ifdef __APPLE__
 # include <string.h>
+# include <stdlib.h>
+# include <stdio.h>
 #endif
 
 # define BOLD		"\x1b[1m"
@@ -19,7 +23,7 @@
 # define RESET		"\x1b[0m"
 
 void	print_success(char *msg, int success);
-void	explain_expected_diff(char expected[40], char result[40]);
+void	explain_expected_diff(char expected[], char result[], unsigned int size);
 void	explain_expected_pointer(void *expected, void *result);
 void	explain_expected_int(int expected, int result);
 

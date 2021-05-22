@@ -27,7 +27,7 @@ static int	compare_original_memcpy()
 
 	print_success("Compare original", success);
 	if (!success)
-		explain_expected_diff(dest, ft_dest);
+		explain_expected_diff(dest, ft_dest, 40);
 	return (success);
 }
 

@@ -7,5 +7,14 @@ void	print_success(char *msg, int success)
 		printf(BOLD GREEN " Ok" RESET);
 	else
 		printf(BOLD RED   "KO :(" );
-	printf("  %s\n" RESET, msg);
+	printf("  ");
+	while (*msg)
+	{
+		if (isprint(*msg))
+			printf("%c", *msg);
+		else
+			printf(BLUE "[char %d]" RESET, *msg);
+		msg++;
+	}
+	printf("\n"RESET);
 }
