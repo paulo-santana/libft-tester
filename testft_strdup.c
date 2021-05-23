@@ -12,7 +12,7 @@ static void get_strings(char *src, char **result, char **ft_result)
 	*ft_result = ft_strdup(src);
 	if (!ft_result)
 	{
-		printf(YELLOW "    user ft_strdup() failed to allocate memory\n");
+		printf(YELLOW "    user ft_strdup() failed to allocate memory\n" RESET);
 		free(result);
 		exit(2);
 	}
@@ -27,7 +27,7 @@ static int test_with_normal_conditions()
 
 	get_strings(src, &result, &ft_result);
 	int src_len = strlen(src);
-	for (int i = 0; i < src_len; i++)
+	for (int i = 0; i <= src_len; i++)
 		if (result[i] != ft_result[i])
 			success = 0;
 	print_success("Testing with normal conditions", success);
@@ -47,10 +47,30 @@ static int test_with_empty_src()
 
 	get_strings(src, &result, &ft_result);
 	int src_len = strlen(src);
-	for (int i = 0; i < src_len; i++)
+	for (int i = 0; i <= src_len; i++)
 		if (result[i] != ft_result[i])
 			success = 0;
 	print_success("Testing with empty src", success);
+	if (!success)
+		explain_expected_diff(result, ft_result, src_len);
+	free(result);
+	free(ft_result);
+	return (success);
+}
+
+static int test_with_src_1_len()
+{
+	int success = 1;
+	char *src = "q";
+	char *result = NULL;
+	char *ft_result = NULL;
+
+	get_strings(src, &result, &ft_result);
+	int src_len = strlen(src);
+	for (int i = 0; i <= src_len; i++)
+		if (result[i] != ft_result[i])
+			success = 0;
+	print_success("Testing with src \"q\"", success);
 	if (!success)
 		explain_expected_diff(result, ft_result, src_len);
 	free(result);
@@ -62,6 +82,7 @@ int testft_strdup()
 {
 	int test1 = test_with_normal_conditions();
 	int test2 = test_with_empty_src();
+	int test3 = test_with_src_1_len();
 
-	return (test1 && test2);
+	return (test1 && test2 && test3);
 }

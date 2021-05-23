@@ -13,7 +13,7 @@ OBJS	= ${SRCS:.c=.o}
 
 NAME	= main
 
-CFLAGS	= -Wall -Werror -Wextra
+CFLAGS	= -Wall -Werror -Wextra -g
 
 UNAME	= $(shell uname)
 ifeq (${UNAME}, Linux)
@@ -32,21 +32,20 @@ ${NAME}: ${OBJS} libft/libft.a
 	${CC} -c $< -o $@
 
 libs:
-	${MAKE} -C libft/
+	${MAKE} CFLAGS="${CFLAGS}" -C libft/
 
-_sanitize: CFLAGS := ${CFLAGS} -fsanitize=address -g
+_sanitize: CFLAGS := ${CFLAGS} -fsanitize=address
 _sanitize:
-	${MAKE} fclean -C libft/
 	${MAKE} CFLAGS="${CFLAGS}" -C libft/
 
 test: CC := ${CC} -fsanitize=address -g
-test: _sanitize ${NAME}
+test: fclean _sanitize ${NAME}
 
 clean:
 	${RM} ${OBJS}
 
 fclean: clean
-	make fclean -C libft
+	${MAKE} fclean -C libft/
 	${RM} ${NAME}
 
 re: fclean all
