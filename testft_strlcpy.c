@@ -153,13 +153,39 @@ static int test_returned_size_with_string_smaller_than_size()
 	int result;
 	int ft_result;
 
-	result = strlcpy(dest + 11, src, size);
-	ft_result = ft_strlcpy(ft_dest + 11, ft_src, size);
+	result = strlcpy(dest + 7, src, size);
+	ft_result = ft_strlcpy(ft_dest + 7, ft_src, size);
 	if (result != ft_result)
 		success = 0;
 	print_success("Test returned size with string smaller than size", success);
 	if (!success)
 		explain_expected_int(result, ft_result);
+	return (success);
+}
+
+static int test_with_size_1()
+{
+	int success = 1;
+	char dest[40];
+	char src[] = "o rato roeu a roupa";
+	char ft_dest[40];
+	char ft_src[] = "o rato roeu a roupa";
+
+	for (int i = 0; i < 40; i++)
+	{
+		dest[i] = '-';
+		ft_dest[i] = '-';
+	}
+
+	int size = 1;
+
+	strlcpy(dest + 11, src, size);
+	ft_strlcpy(ft_dest + 11, ft_src, size);
+	if (ft_memcmp(dest, ft_dest, 40) != 0)
+		success = 0;
+	print_success("Test with size 1", success);
+	if (!success)
+		explain_expected_diff(dest, ft_dest, 40);
 	return (success);
 }
 
@@ -171,6 +197,7 @@ int testft_strlcpy()
 	int test4 = test_returned_size_with_size_zero();
 	int test5 = test_returned_size_with_size_four();
 	int test6 = test_returned_size_with_string_smaller_than_size();
+	int test7 = test_with_size_1();
 
-	return (test1 && test2 && test3 && test4 && test5 && test6);
+	return (test1 && test2 && test3 && test4 && test5 && test6 && test7);
 }
