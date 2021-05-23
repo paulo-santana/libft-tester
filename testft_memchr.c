@@ -19,7 +19,7 @@ int compare_original_memchr(void)
 	return (success);
 }
 
-static int test_not_foundable()
+static int test_non_findable()
 {
 
 	int success = 1;
@@ -32,7 +32,7 @@ static int test_not_foundable()
 	if (ft_index != index)
 		success = 0;
 
-	print_success("Test not foundable", success);
+	print_success("Test non findable", success);
 	if (!success)
 		explain_expected_pointer(index, ft_index);
 	return (success);
@@ -41,7 +41,7 @@ static int test_not_foundable()
 int testft_memchr(void)
 {
 	int	original_test = compare_original_memchr();
-	int	not_found_test = test_not_foundable();
+	int	not_found_test = test_non_findable();
 
 	return (original_test && not_found_test);
 }
