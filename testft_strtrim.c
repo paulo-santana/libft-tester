@@ -1,20 +1,6 @@
 #include "libft.h"
 #include "libtest.h"
 
-static char *get_success_msg(char *format, char *test_str)
-{
-
-	char *msg = malloc(sizeof(char) * (strlen(format) + strlen(test_str) + 1));
-	if (!msg)
-	{
-		warn_alloc_fail("malloc");
-		return (0);
-	}
-		
-	sprintf(msg, format, test_str);
-	return (msg);
-}
-
 static int test_trimming_spaces()
 {
 	int success = 1;

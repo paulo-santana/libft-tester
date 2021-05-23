@@ -24,6 +24,7 @@
 # define RESET		"\x1b[0m"
 
 void	print_success(char *msg, int success);
+char	*get_success_msg(char *format, char *test_str);
 void	warn_alloc_fail(char *failed_func);
 void	explain_expected_diff(char expected[], char result[], unsigned int size);
 void	explain_expected_pointer(void *expected, void *result);

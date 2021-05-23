@@ -30,6 +30,7 @@ int testft_strdup(void);
 int testft_substr(void);
 int testft_strjoin(void);
 int testft_strtrim(void);
+int testft_split(void);
 
 int	main(void)
 {
@@ -118,6 +119,9 @@ int	main(void)
 		failed = 1;
 	printf(BOLD YELLOW "Testing ft_strtrim():" RESET "\n");
 	if (!testft_strtrim())
+		failed = 1;
+	printf(BOLD YELLOW "Testing ft_split():" RESET "\n");
+	if (!testft_split())
 		failed = 1;
 
 	return (failed);
