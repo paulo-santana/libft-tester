@@ -69,8 +69,8 @@ static int test_with_string_smaller_than_size()
 
 	int size = 30;
 
-	strlcpy(dest + 11, src, size);
-	ft_strlcpy(ft_dest + 11, ft_src, size);
+	strlcpy(dest + 7, src, size);
+	ft_strlcpy(ft_dest + 7, ft_src, size);
 	if (ft_memcmp(dest, ft_dest, 40) != 0)
 		success = 0;
 	print_success("Test with string smaller than size", success);
