@@ -5,12 +5,13 @@
 #ifdef __linux__
 # include <bsd/string.h>
 # include <bsd/stdlib.h>
-# include <bsd/stdio.h>
+# include <stdio.h>
 # endif
 #ifdef __APPLE__
 # include <string.h>
 # include <stdlib.h>
 # include <stdio.h>
+
 #endif
 
 # define BOLD		"\x1b[1m"
