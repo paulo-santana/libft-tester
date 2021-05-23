@@ -211,7 +211,7 @@ static int test_returned_size_with_size_1()
 	ft_result = ft_strlcpy(ft_dest + 7, ft_src, size);
 	if (result != ft_result)
 		success = 0;
-	print_success("Test returned size with string smaller than size", success);
+	print_success("Test returned size with size 1", success);
 	if (!success)
 		explain_expected_int(result, ft_result);
 	return (success);
