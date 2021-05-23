@@ -1,21 +1,22 @@
 #include "libtest.h"
 #include "libft.h"
 
-static void get_strings(char *src, char **result, char **ft_result)
+static int get_strings(char *src, char **result, char **ft_result)
 {
 	*result = strdup(src);
 	if (!result)
 	{
-		printf(YELLOW "    system strdup() failed to allocate memory\n" RESET);
-		exit(2);
+		warn_alloc_fail("strdup");
+		return (0);
 	}
 	*ft_result = ft_strdup(src);
 	if (!ft_result)
 	{
-		printf(YELLOW "    user ft_strdup() failed to allocate memory\n" RESET);
-		free(result);
-		exit(2);
+		warn_alloc_fail("ft_strdup");
+		free(*result);
+		return (0);
 	}
+	return (1);
 }
 
 static int test_with_normal_conditions()
@@ -25,7 +26,8 @@ static int test_with_normal_conditions()
 	char *result = NULL;
 	char *ft_result = NULL;
 
-	get_strings(src, &result, &ft_result);
+	if (!get_strings(src, &result, &ft_result))
+		return (0);
 	int src_len = strlen(src);
 	for (int i = 0; i <= src_len; i++)
 		if (result[i] != ft_result[i])
@@ -45,7 +47,8 @@ static int test_with_empty_src()
 	char *result = NULL;
 	char *ft_result = NULL;
 
-	get_strings(src, &result, &ft_result);
+	if (!get_strings(src, &result, &ft_result))
+		return (0);
 	int src_len = strlen(src);
 	for (int i = 0; i <= src_len; i++)
 		if (result[i] != ft_result[i])
@@ -65,7 +68,8 @@ static int test_with_src_1_len()
 	char *result = NULL;
 	char *ft_result = NULL;
 
-	get_strings(src, &result, &ft_result);
+	if (!get_strings(src, &result, &ft_result))
+		return (0);
 	int src_len = strlen(src);
 	for (int i = 0; i <= src_len; i++)
 		if (result[i] != ft_result[i])

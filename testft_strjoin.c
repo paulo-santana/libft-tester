@@ -11,8 +11,8 @@ static int test_normal_conditions()
 	char *result = ft_strjoin(str1, str2);
 	if (!result)
 	{
-		printf(YELLOW "    ft_strjoin(): memory allocation failed\n" RESET);
-		exit(2);
+		warn_alloc_fail("ft_strjoin");
+		return (0);
 	}
 	int len = strlen(expected);
 	for (int i = 0; i <= len; i++)
@@ -35,8 +35,8 @@ static int test_empty_s1()
 	char *result = ft_strjoin(str1, str2);
 	if (!result)
 	{
-		printf(YELLOW "    ft_strjoin(): memory allocation failed\n" RESET);
-		exit(2);
+		warn_alloc_fail("ft_strjoin");
+		return (0);
 	}
 	int len = strlen(expected);
 	for (int i = 0; i <= len; i++)
@@ -60,7 +60,7 @@ static int test_empty_s2()
 	if (!result)
 	{
 		printf(YELLOW "    ft_strjoin(): memory allocation failed\n" RESET);
-		exit(2);
+		return (0);
 	}
 	int len = strlen(expected);
 	for (int i = 0; i <= len; i++)

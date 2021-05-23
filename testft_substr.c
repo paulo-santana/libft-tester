@@ -4,20 +4,18 @@
 static int test_with_normal_conditions()
 {
 	int success = 1;
+	char *test_name = "Test with normal conditions";
 
 	char *src = "a vida e loka mano";
 	char *expected = "vida";
 	char *result = ft_substr(src, 2, 4);
 
 	if (!result)
-	{
-		printf(YELLOW "    ft_substr: Memory allocation failed" RESET);
-		exit(2);
-	}
+		warn_alloc_fail(test_name);
 	for (int i = 0; i <= 4; i++)
 		if (result[i] != expected[i])
 			success = 0;
-	print_success("Test with normal conditions", success);
+	print_success(test_name, success);
 	if (!success)
 		explain_expected_diff(expected, result, 5);
 	free(result);
@@ -34,8 +32,8 @@ static int test_with_size_zero()
 
 	if (!result)
 	{
-		printf(YELLOW "    ft_substr: Memory allocation failed" RESET);
-		exit(2);
+		warn_alloc_fail("ft_substr");
+		return (0);
 	}
 	for (int i = 0; i <= 0; i++)
 		if (result[i] != expected[i])
@@ -57,8 +55,8 @@ static int test_with_size_one()
 
 	if (!result)
 	{
-		printf(YELLOW "    ft_substr: Memory allocation failed" RESET);
-		exit(2);
+		warn_alloc_fail("ft_substr");
+		return (0);
 	}
 	for (int i = 0; i <= 1; i++)
 		if (result[i] != expected[i])
@@ -80,8 +78,8 @@ static int test_with_size_two()
 
 	if (!result)
 	{
-		printf(YELLOW "    ft_substr: Memory allocation failed" RESET);
-		exit(2);
+		warn_alloc_fail("ft_substr");
+		return (0);
 	}
 	for (int i = 0; i <= 2; i++)
 		if (result[i] != expected[i])
@@ -103,8 +101,8 @@ static int test_with_size_bigger_than_src()
 
 	if (!result)
 	{
-		printf(YELLOW "    ft_substr: Memory allocation failed" RESET);
-		exit(2);
+		warn_alloc_fail("ft_substr");
+		return (0);
 	}
 	for (int i = 0; i <= 9; i++)
 		if (result[i] != expected[i])
@@ -126,8 +124,8 @@ static int test_with_negative_size()
 
 	if (!result)
 	{
-		printf(YELLOW "    ft_substr: Memory allocation failed\n" RESET);
-		exit(2);
+		warn_alloc_fail("ft_substr");
+		return (0);
 	}
 	for (int i = 0; i <= 9; i++)
 		if (result[i] != expected[i])

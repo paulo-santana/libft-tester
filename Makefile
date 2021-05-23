@@ -1,4 +1,5 @@
 SRCS	= ./main.c ./utils/print_success.c ./utils/explain_errors.c \
+		  ./utils/warnings.c \
 		  ./testft_strlen.c ./testft_memset.c ./testft_bzero.c \
 		  ./testft_memcpy.c ./testft_memccpy.c ./testft_memmove.c \
 		  ./testft_memchr.c ./testft_memcmp.c ./testft_strlcpy.c \
@@ -7,7 +8,8 @@ SRCS	= ./main.c ./utils/print_success.c ./utils/explain_errors.c \
 		  ./testft_isspace.c ./testft_isalpha.c ./testft_isdigit.c \
 		  ./testft_isalnum.c ./testft_isascii.c ./testft_isprint.c \
 		  ./testft_toupper.c ./testft_tolower.c ./testft_calloc.c \
-		  ./testft_strdup.c ./testft_substr.c ./testft_strjoin.c
+		  ./testft_strdup.c ./testft_substr.c ./testft_strjoin.c \
+		  ./testft_strtrim.c
 
 OBJS	= ${SRCS:.c=.o}
 

@@ -29,6 +29,7 @@ int testft_strdup(void);
 
 int testft_substr(void);
 int testft_strjoin(void);
+int testft_strtrim(void);
 
 int	main(void)
 {
@@ -115,8 +116,9 @@ int	main(void)
 	printf(BOLD YELLOW "Testing ft_strjoin():" RESET "\n");
 	if (!testft_strjoin())
 		failed = 1;
-
-	
+	printf(BOLD YELLOW "Testing ft_strtrim():" RESET "\n");
+	if (!testft_strtrim())
+		failed = 1;
 
 	return (failed);
 }
