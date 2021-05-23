@@ -5,7 +5,7 @@ static int test_everything()
 {
 	int success = 1;
 
-	for (int i = -450; i <= 450; i++)
+	for (int i = -128; i <= 127; i++)
 	{
 		int result = isalpha(i) != 0;
 		int ft_result = ft_isalpha(i) != 0;
@@ -20,7 +20,7 @@ static int test_everything()
 		}
 	}
 
-	print_success("Test characters from 0 to 127", success);
+	print_success("Test characters from -128 to 127", success);
 	return (success);
 }
 
