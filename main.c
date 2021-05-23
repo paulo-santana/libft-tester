@@ -28,6 +28,7 @@ int testft_calloc(void);
 int testft_strdup(void);
 
 int testft_substr(void);
+int testft_strjoin(void);
 
 int	main(void)
 {
@@ -110,6 +111,9 @@ int	main(void)
 
 	printf(BOLD YELLOW "Testing ft_substr():" RESET "\n");
 	if (!testft_substr())
+		failed = 1;
+	printf(BOLD YELLOW "Testing ft_strjoin():" RESET "\n");
+	if (!testft_strjoin())
 		failed = 1;
 
 	
