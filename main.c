@@ -27,9 +27,12 @@ int testft_tolower(void);
 int testft_calloc(void);
 int testft_strdup(void);
 
+int testft_substr(void);
+
 int	main(void)
 {
 	int	failed = 0;
+	printf("\n=============== " BOLD MAGENTA "Part 1:\n\n");
 	printf(BOLD YELLOW "Testing ft_strlen():" RESET "\n");
 	if (!testft_strlen())
 		failed = 1;
@@ -102,5 +105,14 @@ int	main(void)
 	printf(BOLD YELLOW "Testing ft_strdup():" RESET "\n");
 	if (!testft_strdup())
 		failed = 1;
+
+	printf("\n=============== " BOLD MAGENTA "Part 2:\n\n");
+
+	printf(BOLD YELLOW "Testing ft_substr():" RESET "\n");
+	if (!testft_substr())
+		failed = 1;
+
+	
+
 	return (failed);
 }

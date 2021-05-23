@@ -7,7 +7,7 @@ SRCS	= ./main.c ./utils/print_success.c ./utils/explain_errors.c \
 		  ./testft_isspace.c ./testft_isalpha.c ./testft_isdigit.c \
 		  ./testft_isalnum.c ./testft_isascii.c ./testft_isprint.c \
 		  ./testft_toupper.c ./testft_tolower.c ./testft_calloc.c \
-		  ./testft_strdup.c
+		  ./testft_strdup.c ./testft_substr.c
 
 OBJS	= ${SRCS:.c=.o}
 
