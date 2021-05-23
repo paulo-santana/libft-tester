@@ -75,8 +75,8 @@ static int test_with_string_smaller_than_size()
 	dest[15] = '\0';
 	ft_dest[15] = '\0';
 
-	strlcat(dest + 11, src, size);
-	ft_strlcat(ft_dest + 11, ft_src, size);
+	strlcat(dest + 7, src, size);
+	ft_strlcat(ft_dest + 7, ft_src, size);
 	if (ft_memcmp(dest, ft_dest, 40) != 0)
 		success = 0;
 	print_success("Test with string smaller than size", success);
@@ -165,8 +165,8 @@ static int test_returned_size_with_string_smaller_than_size()
 	int result;
 	int ft_result;
 
-	result = strlcat(dest + 11, src, size);
-	ft_result = ft_strlcat(ft_dest + 11, ft_src, size);
+	result = strlcat(dest + 7, src, size);
+	ft_result = ft_strlcat(ft_dest + 7, ft_src, size);
 	if (result != ft_result)
 		success = 0;
 	print_success("Test returned size with string smaller than size", success);
