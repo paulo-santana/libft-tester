@@ -38,6 +38,8 @@ static int test_with_space()
 		free_result(result);
 		return (0);
 	}
+	if (expected[i] != result[i])
+		success = 0;
 	print_success(msg, success);
 	if (!success)
 	{
@@ -82,6 +84,8 @@ static int test_with_commas()
 		free_result(result);
 		return (0);
 	}
+	if (expected[i] != result[i])
+		success = 0;
 	print_success(msg, success);
 	if (!success)
 	{
@@ -126,6 +130,8 @@ static int test_with_non_existent_splitter()
 		free_result(result);
 		return (0);
 	}
+	if (expected[i] != result[i])
+		success = 0;
 	print_success(msg, success);
 	if (!success)
 	{
@@ -170,6 +176,8 @@ static int test_with_empty_string()
 		free_result(result);
 		return (0);
 	}
+	if (expected[i] != result[i])
+		success = 0;
 	print_success(msg, success);
 	if (!success)
 	{
