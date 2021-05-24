@@ -32,6 +32,7 @@ int testft_strjoin(void);
 int testft_strtrim(void);
 int testft_split(void);
 int testft_itoa(void);
+int testft_strmapi(void);
 
 int	main(void)
 {
@@ -126,6 +127,9 @@ int	main(void)
 		failed = 1;
 	printf(BOLD YELLOW "Testing ft_itoa():" RESET "\n");
 	if (!testft_itoa())
+		failed = 1;
+	printf(BOLD YELLOW "Testing ft_strmapi():" RESET "\n");
+	if (!testft_strmapi())
 		failed = 1;
 
 	return (failed);
