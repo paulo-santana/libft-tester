@@ -66,9 +66,9 @@ static int test_trimming_two_characteres()
 static int test_trimming_three_characteres()
 {
 	int success = 1;
-	char *test_str = " a bba b  a qqqqqqqq aab a";
-	char set[] = {'b', ' ', 'a', '\0'};
-	char *expected = "qqqqqqqq";
+	char set[] = "b a";
+	char *test_str = " a bba b  a --- a-   b----- aab a";
+	char *expected =             "--- a-   b-----";
 
 	char *result = ft_strtrim(test_str, set);
 	if (!result)

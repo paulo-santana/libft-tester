@@ -33,8 +33,9 @@ int testft_strtrim(void);
 int testft_split(void);
 int testft_itoa(void);
 int testft_strmapi(void);
+int testft_putchar_fd(void);
 
-int	main(void)
+static int test_part1()
 {
 	int	failed = 0;
 	printf("\n=============== " BOLD MAGENTA "Part 1:\n\n");
@@ -110,7 +111,12 @@ int	main(void)
 	printf(BOLD YELLOW "Testing ft_strdup():" RESET "\n");
 	if (!testft_strdup())
 		failed = 1;
+	return (failed);
+}
 
+static int test_part2()
+{
+	int	failed = 0;
 	printf("\n=============== " BOLD MAGENTA "Part 2:\n\n");
 
 	printf(BOLD YELLOW "Testing ft_substr():" RESET "\n");
@@ -131,6 +137,45 @@ int	main(void)
 	printf(BOLD YELLOW "Testing ft_strmapi():" RESET "\n");
 	if (!testft_strmapi())
 		failed = 1;
-
+	printf(BOLD YELLOW "Testing ft_putchar_fd():" RESET "\n");
+	if (!testft_putchar_fd())
+		failed = 1;
 	return (failed);
+}
+
+static int test_bonus()
+{
+	return (1);
+}
+
+static int test_all()
+{
+	int test1 = test_part1();
+	int test2 = test_part2();
+	int test3 = test_bonus();
+
+	return (test1 && test2 && test3);
+}
+
+int	main(int argc, char *argv[])
+{
+	if (argc == 1)
+		return (test_all());
+	if (argc == 2)
+	{
+		char *option = argv[1];
+		if (strcmp("all", option) == 0)
+			return test_all();
+		else if (strcmp("part1", option) == 0)
+			return (test_part1());
+		else if (strcmp("part2", option) == 0)
+			return (test_part2());
+		else if (strcmp("bonus", option) == 0)
+			return (test_bonus());
+	}
+	printf(
+			"Usage: ./%s [SET]; where [SET] is optional and can"
+			"either be \"all\", \"part1\", \"part2\" or \"bonus\"",
+			argv[0]);
+
 }
