@@ -158,7 +158,7 @@ static int test_with_a_negative_number(void)
 {
 	int success = 1;
 	char *str = "a vida e loka mano";
-	char *target = "loca";
+	char *target = "loka";
 
 	char *result = strnstr(str, target, -1);
 	char *ft_result = ft_strnstr(str, target, -1);
@@ -166,6 +166,23 @@ static int test_with_a_negative_number(void)
 	if (result != ft_result)
 		success = 0;
 	print_success("test with a negative number >:)", success);
+	if (!success)
+		explain_expected_pointer(result, ft_result);
+	return (success);
+}
+
+static int test_unfindable_with_a_negative_number(void)
+{
+	int success = 1;
+	char *str = "a vida e loka mano";
+	char *target = "loca";
+
+	char *result = strnstr(str, target, -1);
+	char *ft_result = ft_strnstr(str, target, -1);
+	
+	if (result != ft_result)
+		success = 0;
+	print_success("test with an unfindable needle and negative number >:)", success);
 	if (!success)
 		explain_expected_pointer(result, ft_result);
 	return (success);
@@ -183,7 +200,8 @@ int testft_strnstr(void)
 	int test8 = test_a_match_after_n();
 	int test9 = test_with_an_empty_string();
 	int test10 = test_with_a_negative_number();
+	int test11 = test_unfindable_with_a_negative_number();
 
-	return (test1 && test2 && test3 && test4  && test10
+	return (test1 && test2 && test3 && test4  && test10 && test11
 			&& test5 && test6 && test7 && test8 && test9);
 }
