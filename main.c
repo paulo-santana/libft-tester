@@ -33,7 +33,11 @@ int testft_strtrim(void);
 int testft_split(void);
 int testft_itoa(void);
 int testft_strmapi(void);
+
 int testft_putchar_fd(void);
+int testft_putstr_fd(void);
+int testft_putendl_fd(void);
+int testft_putnbr_fd(void);
 
 static int test_part1()
 {
@@ -137,24 +141,35 @@ static int test_part2()
 	printf(BOLD YELLOW "Testing ft_strmapi():" RESET "\n");
 	if (!testft_strmapi())
 		failed = 1;
-	printf(BOLD YELLOW "Testing ft_putchar_fd():" RESET "\n");
-	if (!testft_putchar_fd())
-		failed = 1;
 	return (failed);
 }
 
 static int test_bonus()
 {
-	return (1);
+	return (0);
 }
 
 static int test_all()
 {
 	int test1 = test_part1();
 	int test2 = test_part2();
-	int test3 = test_bonus();
+	int test4 = test_bonus();
 
-	return (test1 && test2 && test3);
+	return (test1 || test2 || test4);
+}
+
+static void show_help(char *program_name)
+{
+	printf(
+			"Usage: ./%s [SET]; where [SET] is optional and can"
+			"either be \"all\", \"part1\", \"part2\" or \"bonus\"\n",
+			program_name);
+	printf("\nOptions:\n\n");
+	printf("all	run every tests\n");
+	printf("part1	run tests for the part 1 functions\n");
+	printf("part2	run tests for the part 2 functions\n");
+	printf("write	run tests for the functions that use write();\n");
+	printf("bonus	run tests for the bonus funtions (not implemented)\n");
 }
 
 int	main(int argc, char *argv[])
@@ -170,12 +185,17 @@ int	main(int argc, char *argv[])
 			return (test_part1());
 		else if (strcmp("part2", option) == 0)
 			return (test_part2());
+		else if (strcmp("help", option) == 0)
+		{
+			 show_help(argv[0]);
+			 return (0);
+		}
 		else if (strcmp("bonus", option) == 0)
 			return (test_bonus());
 	}
 	printf(
 			"Usage: ./%s [SET]; where [SET] is optional and can"
-			"either be \"all\", \"part1\", \"part2\" or \"bonus\"",
+			"either be \"all\", \"part1\", \"part2\" or \"bonus\"\n",
 			argv[0]);
 
 }

@@ -91,7 +91,7 @@ static int test_src_overlap_dest()
 static int	test_return_pointer_dest_over_src(void)
 {
 	int success = 1;
-	char ft_dest[20];
+	char ft_dest[20] = "eurqwrioqripqyriq";
 	void *result;
 
 	result = ft_memmove(ft_dest, ft_dest + 4, 7);
@@ -106,7 +106,7 @@ static int	test_return_pointer_dest_over_src(void)
 int test_return_pointer_src_over_dest()
 {
 	int success = 1;
-	char ft_dest[20];
+	char ft_dest[20] = "192381932987";
 	void *result;
 
 	void *expected = ft_dest + 4;
