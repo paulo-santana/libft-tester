@@ -188,6 +188,23 @@ static int test_unfindable_with_a_negative_number(void)
 	return (success);
 }
 
+static int test_with_n_beign_zero(void)
+{
+	int success = 1;
+	char *str = "a vida e loka mano";
+	char *target = "a vida";
+
+	char *result = strnstr(str, target, 0);
+	char *ft_result = ft_strnstr(str, target, 0);
+	
+	if (result != ft_result)
+		success = 0;
+	print_success("Test with a match at the start, but n is 0", success);
+	if (!success)
+		explain_expected_pointer(result, ft_result);
+	return (success);
+}
+
 int testft_strnstr(void)
 {
 	int test1 = test_normal_conditions();
@@ -201,7 +218,8 @@ int testft_strnstr(void)
 	int test9 = test_with_an_empty_string();
 	int test10 = test_with_a_negative_number();
 	int test11 = test_unfindable_with_a_negative_number();
+	int test12 = test_with_n_beign_zero();
 
-	return (test1 && test2 && test3 && test4  && test10 && test11
+	return (test1 && test2 && test3 && test4  && test10 && test11 && test12
 			&& test5 && test6 && test7 && test8 && test9);
 }
