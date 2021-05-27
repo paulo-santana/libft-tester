@@ -345,6 +345,33 @@ static int test_returned_size_with_both_empty()
 	return (success);
 }
 
+static int test_this_weird_thing()
+{
+	int success = 1;
+	char dest[15];
+	char src[] = "lorem ipsum dolor sit amet";
+	char ft_dest[15];
+	char ft_src[] = "lorem ipsum dolor sit amet";
+	int size = 15;
+
+	memset(dest, 0, size);
+	memset(ft_dest, 0, size);
+	memset(dest, 'r', 6);
+	memset(ft_dest, 'r', 6);
+
+	dest[14] = 'a';
+	ft_dest[14] = 'a';
+
+	strlcat(dest, src, size);
+	ft_strlcat(ft_dest, ft_src, size);
+	if (memcmp(dest, ft_dest, size) != 0)
+		success = 0;
+	print_success("Test with a string that just barely fit, size = 15", success);
+	if (!success)
+		explain_expected_diff(dest, ft_dest, 15);
+	return (success);
+}
+
 int testft_strlcat()
 {
 	int test1 = test_with_size_zero();
@@ -359,7 +386,8 @@ int testft_strlcat()
 	int test10 = test_returned_size_with_empty_src();
 	int test11 = test_with_both_empty();
 	int test12 = test_returned_size_with_both_empty();
+	int test13 = test_this_weird_thing();
 
 	return (test1 && test2 && test3 && test4 && test10 && test11 && test12
-			&& test5 && test6 && test7 && test8 && test9);
+			&& test5 && test6 && test7 && test8 && test9 && test13);
 }
