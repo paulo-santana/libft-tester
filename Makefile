@@ -5,7 +5,7 @@ SRCS	= ./main.c ./utils/print_success.c ./utils/explain_errors.c \
 		  ./testft_memchr.c ./testft_memcmp.c ./testft_strlcpy.c \
 		  ./testft_strlcat.c ./testft_strchr.c ./testft_strrchr.c \
 		  ./testft_strnstr.c ./testft_strncmp.c ./testft_atoi.c \
-		  ./testft_isspace.c ./testft_isalpha.c ./testft_isdigit.c \
+		  ./testft_isalpha.c ./testft_isdigit.c \
 		  ./testft_isalnum.c ./testft_isascii.c ./testft_isprint.c \
 		  ./testft_toupper.c ./testft_tolower.c ./testft_calloc.c \
 		  ./testft_strdup.c ./testft_substr.c ./testft_strjoin.c \
@@ -41,8 +41,8 @@ _sanitize: CFLAGS := ${CFLAGS} -fsanitize=address
 _sanitize:
 	${MAKE} CFLAGS="${CFLAGS}" -C libft/
 
-test: CC := ${CC} -fsanitize=address -g
-test: fclean _sanitize ${NAME}
+san: CC := ${CC} -fsanitize=address
+san: fclean _sanitize ${NAME}
 
 clean:
 	${RM} ${OBJS}

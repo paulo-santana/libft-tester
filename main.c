@@ -17,7 +17,7 @@ int testft_strrchr(void);
 int testft_strnstr(void);
 int testft_strncmp(void);
 int testft_atoi(void);
-int testft_isspace(void);
+//int testft_isspace(void);
 int testft_isalpha(void);
 int testft_isdigit(void);
 int testft_isascii(void);
@@ -88,9 +88,9 @@ static int test_part1()
 	printf(BOLD YELLOW "Testing ft_atoi():" RESET "\n");
 	if (!testft_atoi())
 		failed = 1;
-	printf(BOLD YELLOW "Testing ft_isspace():" RESET "\n");
-	if (!testft_isspace())
-		failed = 1;
+	//printf(BOLD YELLOW "Testing ft_isspace():" RESET "\n");
+	//if (!testft_isspace())
+	//	failed = 1;
 	printf(BOLD YELLOW "Testing ft_isalpha():" RESET "\n");
 	if (!testft_isalpha())
 		failed = 1;
