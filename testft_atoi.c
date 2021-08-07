@@ -8,7 +8,7 @@ static int	test_all(void)
 	int failed = 0;
 	int result;
 	int ft_result;
-	char test_str[30] = "Test ";
+	char test_str[32] = "Test ";
 
 	char *test_subjects[] = {"0", "-0", "1", "-1", "--42", "-42", "42", "1234",
 							"abcd", "00123", "  - 2", "     20", "    -3",
